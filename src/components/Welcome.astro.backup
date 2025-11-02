@@ -11,8 +11,11 @@ import {
   Zap, 
   Camera, 
   MessageCircle, 
+  CheckCircle,
   Instagram,
-  ArrowUpRight
+  ArrowUpRight,
+  X,
+  Check
 } from 'lucide-astro';
 import SwipeMockup from './SwipeMockup.astro';
 import Logo from './Logo.astro';
@@ -21,12 +24,12 @@ import Logo from './Logo.astro';
 <div class="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
   <!-- Header -->
   <header class="fixed top-0 left-0 right-0 z-50 bg-slate-900/80 backdrop-blur-xl border-b border-slate-700/50">
-    <div class="max-w-6xl mx-auto container-padding py-4">
+    <div class="max-w-6xl mx-auto px-6 py-4">
       <div class="flex items-center justify-between">
         <div class="flex items-center space-x-3">
-          <Logo class="w-10 h-10" color="text-purple-500" />
+          <Logo class="w-8 h-8" color="text-purple-500" />
           <h1 class="text-xl font-bold bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
-            Renomada
+            ReNomada
           </h1>
         </div>
         <nav class="hidden md:flex items-center space-x-8">
@@ -34,40 +37,26 @@ import Logo from './Logo.astro';
           <a href="#solucion" class="text-slate-300 hover:text-white transition-colors">Solución</a>
           <a href="#como-funciona" class="text-slate-300 hover:text-white transition-colors">Cómo funciona</a>
         </nav>
-        <div class="flex items-center space-x-2 sm:space-x-4">
-          <a 
-            href="https://app.renomada.com/#/login" 
-            class="text-slate-300 hover:text-white transition-colors font-medium px-2 sm:px-4 py-2 text-sm sm:text-base"
-          >
-            Login
-          </a>
-          <a 
-            href="https://app.renomada.com/#/register" 
-            class="bg-primary hover:bg-primary-dark text-white font-bold px-3 sm:px-6 py-2 rounded-xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-xl hover:shadow-primary/25 text-sm sm:text-base whitespace-nowrap"
-          >
-            Regístrate
-          </a>
-        </div>
       </div>
     </div>
   </header>
 
   <!-- Sección Hero -->
-  <section class="min-h-screen flex items-center pt-20 relative pb-20 md:pb-0">
-    <div class="max-w-6xl mx-auto w-full container-padding">
+  <section class="min-h-screen flex items-center px-6 pt-20 relative pb-20 md:pb-0">
+    <div class="max-w-6xl mx-auto w-full">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <!-- Contenido Izquierdo -->
         <div class="space-y-8">
           <div class="space-y-6">
-            <div class="inline-flex items-center space-x-3 bg-green-500/10 border border-green-500/20 rounded-full px-3 py-2">
-              <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-              <span class="text-green-300 text-sm font-medium">¡Ya disponible!</span>
+            <div class="inline-flex items-center space-x-3 bg-blue-500/10 border border-blue-500/20 rounded-full px-3 py-2">
+              <span class="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></span>
+              <span class="text-blue-300 text-sm font-medium">Próximamente</span>
             </div>
             
             <h1 class="heading-lg font-black leading-tight">
               <span class="text-white">Libera espacio. Reduce tu huella.</span>
               <br>
-              <span class="bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent">
+              <span class="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
                 Ayuda a un viajero que tienes al lado.
               </span>
             </h1>
@@ -78,18 +67,60 @@ import Logo from './Logo.astro';
             <br/>Regala lo que ya no usas, encuentra lo que necesitas cerca de ti y deja una huella más positiva en cada kilómetro.
           </p>
 
-          <!-- CTA Hero -->
-          <div class="space-y-4 max-w-md">
-            <a 
-              href="https://app.renomada.com/#/register" 
-              class="block w-full bg-primary hover:bg-primary-dark text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-xl hover:shadow-primary/25 flex items-center justify-center space-x-2 text-center"
+          <!-- Formulario CTA -->
+          <div id="cta-form" class="space-y-4 max-w-md">
+            <p class="text-slate-400 text-sm">Únete al movimiento de la economía circular nómada. ¡Te avisamos en cuanto estemos en la carretera!</p>
+            
+            <form id="email-form" class="space-y-3">
+              <div class="relative group">
+                <input 
+                  type="email" 
+                  id="email-input"
+                  placeholder="Tu correo electrónico" 
+                  class="w-full px-4 py-3 rounded-xl border-2 border-slate-600 bg-slate-800/50 text-white placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:bg-slate-800 transition-all duration-300 group-hover:border-slate-500"
+                  required
+                >
+                <div class="absolute inset-0 rounded-xl bg-gradient-to-r from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+              </div>
+              
+              <button 
+                type="submit"
+                class="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-xl hover:shadow-blue-500/25 flex items-center justify-center space-x-2"
+              >
+                <span>¡Avísame del lanzamiento!</span>
+                <ArrowUpRight class="w-4 h-4" />
+              </button>
+            </form>
+
+            <div class="relative">
+              <div class="absolute inset-0 flex items-center">
+                <div class="w-full border-t border-slate-600"></div>
+              </div>
+              <div class="relative flex justify-center text-sm">
+                <!-- <span class="px-4 bg-slate-900 text-slate-400">o</span> -->
+              </div>
+            </div>
+
+            <p class="text-slate-400 text-sm mb-3">
+              Si no quieres dejarnos tu email, está bien. Solo queremos saber que te interesa.
+            </p>
+            
+            <button 
+              id="interest-btn"
+              class="w-full border-2 border-slate-600 text-slate-300 hover:border-slate-500 hover:text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 hover:bg-slate-800/50 flex items-center justify-center space-x-2 group"
             >
-              <span>Comienza ahora</span>
-              <ArrowUpRight class="w-5 h-5" />
-            </a>
-            <!-- <p class="text-slate-400 text-sm text-center">
-              Disponible como PWA. Instálala en tu dispositivo y comienza a compartir.
-            </p> -->
+              <span>Sí, me interesa</span>
+              <Heart class="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
+            </button>
+          </div>
+
+          <!-- Mensaje de Agradecimiento (Oculto) -->
+          <div id="thank-you" class="hidden max-w-md">
+            <div class="bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-green-500/20 rounded-xl p-4 text-center mb-10">
+              <CheckCircle class="w-8 h-8 text-green-400 mx-auto mb-3" />
+              <h2 class="text-xl font-bold text-white mb-2">¡Gracias por unirte a la tribu! ✨</h2>
+              <p class="text-slate-300 text-sm">Te avisaremos en cuanto ReNomada esté en la carretera. ¡Buena ruta!</p>
+            </div>
           </div>
         </div>
 
@@ -117,8 +148,8 @@ import Logo from './Logo.astro';
         </div>
 
         <div class="group p-8 bg-slate-800/50 border border-slate-700/50 rounded-2xl hover:border-slate-600/50 transition-all duration-500 hover:scale-[1.02] hover:shadow-xl hover:shadow-slate-900/50">
-          <div class="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary-dark/20 border border-primary/30 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-            <Truck class="w-8 h-8 text-primary" />
+          <div class="w-16 h-16 bg-gradient-to-br from-blue-500/20 to-blue-600/20 border border-blue-500/30 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <Truck class="w-8 h-8 text-blue-400" />
           </div>
           <h3 class="heading-md font-bold text-white mb-4">El 'por si acaso' ocupa lugar</h3>
           <p class="text-slate-300 leading-relaxed">En tu casa con ruedas, cada centímetro es sagrado. Acumular objetos que ya no usas no solo te roba espacio, te roba libertad.</p>
@@ -149,7 +180,7 @@ import Logo from './Logo.astro';
   <section id="solucion" class="section-padding bg-white">
     <div class="max-w-6xl mx-auto container-padding">
       <div class="text-center mb-20">
-        <div class="inline-flex items-center space-x-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-6">
+        <div class="inline-flex items-center space-x-2 bg-blue-500/10 text-blue-600 px-4 py-2 rounded-full mb-6">
           <Zap class="w-5 h-5" />
           <span class="font-semibold">La Solución</span>
         </div>
@@ -174,8 +205,8 @@ import Logo from './Logo.astro';
         </div>
         
         <div class="text-center group">
-          <div class="w-20 h-20 bg-gradient-to-br from-primary/20 to-primary-dark/20 border border-primary/30 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-            <ArrowRight class="w-10 h-10 text-primary" />
+          <div class="w-20 h-20 bg-gradient-to-br from-blue-500/20 to-blue-600/20 border border-blue-500/30 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+            <ArrowRight class="w-10 h-10 text-blue-600" />
           </div>
           <h3 class="heading-md font-bold text-slate-900 mb-3">Cerca es mejor</h3>
           <p class="text-slate-600">Nuestra geolocalización dinámica te muestra solo lo que tienes a tu alrededor. La solución más sostenible y comunitaria es siempre la más cercana.</p>
@@ -211,10 +242,10 @@ import Logo from './Logo.astro';
       <div class="grid md:grid-cols-3 gap-10 lg:gap-16">
         <div class="group text-center">
           <div class="relative mb-8">
-            <div class="w-24 h-24 bg-gradient-to-br from-primary to-primary-light rounded-3xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300 shadow-xl shadow-primary/25">
+            <div class="w-24 h-24 bg-gradient-to-br from-blue-500 to-blue-600 rounded-3xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300 shadow-xl shadow-blue-500/25">
               <Camera class="w-12 h-12 text-white" />
             </div>
-            <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-8 h-8 bg-white rounded-full flex items-center justify-center text-primary font-bold text-sm shadow-lg border-2 border-primary/20">1</div>
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-8 h-8 bg-white rounded-full flex items-center justify-center text-blue-600 font-bold text-sm shadow-lg border-2 border-blue-100">1</div>
           </div>
           <h3 class="heading-md font-bold text-white mb-4">Publica lo que no usas</h3>
           <p class="text-slate-300 leading-relaxed">Toma una foto, añade descripción y ¡listo! Tu objeto está disponible para la comunidad.</p>
@@ -314,8 +345,8 @@ import Logo from './Logo.astro';
         </div>
         
         <div class="text-center group">
-          <div class="w-20 h-20 bg-gradient-to-br from-primary/20 to-primary-dark/20 border border-primary/30 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-            <Heart class="w-10 h-10 text-primary" />
+          <div class="w-20 h-20 bg-gradient-to-br from-blue-500/20 to-blue-600/20 border border-blue-500/30 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+            <Heart class="w-10 h-10 text-blue-600" />
           </div>
           <h3 class="heading-md font-bold text-slate-900 mb-3">Apoyo Mutuo</h3>
           <p class="text-slate-600">Una red de ayuda donde todos dan y reciben</p>
@@ -339,25 +370,60 @@ import Logo from './Logo.astro';
         Únete a la tribu que comparte recursos y cuida del camino.
       </h2>
       
-      <p class="text-body text-slate-300 mb-12 leading-relaxed max-w-2xl mx-auto">
-        Únete a la revolución nómada sostenible. Tu próxima aventura empieza con un swipe. 
-        <br/>Descarga la app y comienza a compartir hoy mismo.
+      <p class="text-body text-slate-300 mb-12 leading-relaxed">
+        Únete a la revolución nómada sostenible. Tu próxima aventura empieza con un swipe.
       </p>
       
-      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-md mx-auto">
-        <a 
-          href="https://app.renomada.com/#/register" 
-          class="w-full sm:w-auto bg-primary hover:bg-primary-dark text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-xl hover:shadow-primary/25 flex items-center justify-center space-x-2"
+      <div id="cta-final" class="space-y-4 max-w-md mx-auto">
+        <form id="email-form-final" class="space-y-3">
+          <div class="relative group">
+            <input 
+              type="email" 
+              id="email-input-final"
+              placeholder="Tu correo electrónico" 
+              class="w-full px-4 py-3 rounded-xl border-2 border-slate-600 bg-slate-800/50 text-white placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:bg-slate-800 transition-all duration-300 group-hover:border-slate-500"
+              required
+            >
+            <div class="absolute inset-0 rounded-xl bg-gradient-to-r from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+          </div>
+          
+          <button 
+            type="submit"
+            class="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-xl hover:shadow-blue-500/25 flex items-center justify-center space-x-2"
+          >
+            <span>¡Avísame del lanzamiento!</span>
+            <ArrowUpRight class="w-4 h-4" />
+          </button>
+        </form>
+
+        <div class="relative">
+          <div class="absolute inset-0 flex items-center">
+            <div class="w-full border-t border-slate-600"></div>
+          </div>
+          <div class="relative flex justify-center text-sm">
+            <!-- <span class="px-4 bg-slate-800 text-slate-400">o</span> -->
+          </div>
+        </div>
+
+        <p class="text-slate-400 text-sm text-center mb-3">
+          Si no quieres dejarnos tu email, está bien. Solo queremos saber que te interesa.
+        </p>
+        
+        <button 
+          id="interest-btn-final"
+          class="w-full border-2 border-slate-600 text-slate-300 hover:border-slate-500 hover:text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 hover:bg-slate-800/50 flex items-center justify-center space-x-2 group"
         >
-          <span>Comienza ahora</span>
-          <ArrowUpRight class="w-5 h-5" />
-        </a>
-        <a 
-          href="https://app.renomada.com/#/login" 
-          class="w-full sm:w-auto border-2 border-slate-600 text-slate-300 hover:border-slate-500 hover:text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 hover:bg-slate-800/50"
-        >
-          Ya tengo cuenta
-        </a>
+          <span>Sí, me interesa</span>
+          <Heart class="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
+        </button>
+      </div>
+
+      <div id="thank-you-final" class="hidden max-w-md mx-auto mt-8">
+        <div class="bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-green-500/20 rounded-xl p-4 text-center">
+          <CheckCircle class="w-8 h-8 text-green-400 mx-auto mb-3" />
+          <h2 class="text-xl font-bold text-white mb-2">¡Gracias por unirte a la tribu! ✨</h2>
+                        <p class="text-slate-300 text-sm">Te avisaremos en cuanto ReNomada esté en la carretera. ¡Buena ruta!</p>
+        </div>
       </div>
     </div>
   </section>
@@ -367,7 +433,7 @@ import Logo from './Logo.astro';
     <div class="max-w-6xl mx-auto container-padding">
       <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
         <div class="flex items-center space-x-3">
-          <Logo class="w-10 h-10" color="text-purple-500" />
+          <Logo class="w-8 h-8" color="text-purple-500" />
           <div>
             <h3 class="text-lg font-bold text-white">ReNomada © 2025</h3>
             <p class="text-slate-400 text-sm">Libera espacio. Reduce tu huella.</p>
@@ -376,9 +442,9 @@ import Logo from './Logo.astro';
         
         <div class="flex items-center space-x-6">
           <a href="#" class="text-slate-400 hover:text-white transition-colors group">
-            <!-- <div class="w-8 h-8 bg-slate-800 hover:bg-slate-700 rounded-xl flex items-center justify-center transition-colors group-hover:scale-110">
+            <div class="w-8 h-8 bg-slate-800 hover:bg-slate-700 rounded-xl flex items-center justify-center transition-colors group-hover:scale-110">
               <Instagram class="w-4 h-4" />
-            </div> -->
+            </div>
           </a>
         </div>
       </div>
@@ -436,23 +502,102 @@ import Logo from './Logo.astro';
 
 
 
-  // Tracking de clicks en botones CTA
-  document.querySelectorAll('a[href*="app.renomada.com/#/register"]').forEach(link => {
-    link.addEventListener('click', function(this: HTMLAnchorElement) {
-      sendGAEvent('cta_clicked', {
-        action: 'register',
-        location: this.closest('section')?.id || 'unknown'
+  // Manejo del formulario principal
+  document.getElementById('email-form')?.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const emailInput = document.getElementById('email-input') as HTMLInputElement;
+    const email = emailInput?.value;
+    
+    if (email) {
+      // Enviar evento a GA4
+      sendGAEvent('email_submitted', {
+        email: email,
+        location: 'hero_section'
       });
-    });
+      
+      // Enviar a Web3Forms
+      const success = await sendToWeb3Forms({
+        email: email,
+        type: 'email',
+        location: 'hero_section'
+      });
+      
+      if (success) {
+        // Mostrar mensaje de agradecimiento
+        document.getElementById('cta-form')?.classList.add('hidden');
+        document.getElementById('thank-you')?.classList.remove('hidden');
+      }
+    }
   });
 
-  document.querySelectorAll('a[href*="app.renomada.com/#/login"]').forEach(link => {
-    link.addEventListener('click', function(this: HTMLAnchorElement) {
-      sendGAEvent('cta_clicked', {
-        action: 'login',
-        location: this.closest('section')?.id || 'unknown'
+  // Manejo del formulario final
+  document.getElementById('email-form-final')?.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const emailInput = document.getElementById('email-input-final') as HTMLInputElement;
+    const email = emailInput?.value;
+    
+    if (email) {
+      // Enviar evento a GA4
+      sendGAEvent('email_submitted', {
+        email: email,
+        location: 'final_section'
       });
+      
+      // Enviar a Web3Forms
+      const success = await sendToWeb3Forms({
+        email: email,
+        type: 'email',
+        location: 'final_section'
+      });
+      
+      if (success) {
+        // Mostrar mensaje de agradecimiento
+        document.getElementById('cta-final')?.classList.add('hidden');
+        document.getElementById('thank-you-final')?.classList.remove('hidden');
+      }
+    }
+  });
+
+  // Manejo del botón de interés principal
+  document.getElementById('interest-btn')?.addEventListener('click', async function() {
+    // Enviar evento de interés a GA4
+    sendGAEvent('interest_expressed', {
+      location: 'hero_section',
+      action: 'button_click'
     });
+    
+          // Enviar a Web3Forms
+      const success = await sendToWeb3Forms({
+        type: 'interest',
+        location: 'hero_section'
+      });
+    
+    if (success) {
+      // Mostrar mensaje de agradecimiento
+      document.getElementById('cta-form')?.classList.add('hidden');
+      document.getElementById('thank-you')?.classList.remove('hidden');
+    }
+  });
+
+  // Manejo del botón de interés final
+  document.getElementById('interest-btn-final')?.addEventListener('click', async function() {
+    // Enviar evento de interés a GA4
+    sendGAEvent('interest_expressed', {
+      location: 'final_section',
+      action: 'button_click'
+    });
+    
+          // Enviar a Web3Forms
+      const success = await sendToWeb3Forms({
+        type: 'interest',
+        location: 'final_section'
+      });
+    
+    if (success) {
+      // Mostrar mensaje de agradecimiento
+      document.getElementById('cta-final')?.classList.add('hidden');
+      document.getElementById('thank-you-final')?.classList.remove('hidden');
+    }
   });
 
   // Tracking de página vista
@@ -467,9 +612,9 @@ import Logo from './Logo.astro';
 
   // Smooth scrolling para navegación
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (this: HTMLAnchorElement, e: Event) {
+    anchor.addEventListener('click', function (e: Event) {
       e.preventDefault();
-      const href = this.getAttribute('href');
+      const href = (this as HTMLAnchorElement).getAttribute('href');
       if (href) {
         const target = document.querySelector(href);
         if (target) {
@@ -486,8 +631,8 @@ import Logo from './Logo.astro';
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0GLRK3PH8L"></script>
 <script>
-  (window as any).dataLayer = (window as any).dataLayer || [];
-  function gtag(...args: any[]){((window as any).dataLayer as any[]).push(args);}
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'G-0GLRK3PH8L');

@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+/* Color personalizado ReNomada */
+@theme {
+  --color-primary: #5A66D0;
+  --color-primary-dark: #4E5AB8;
+  --color-primary-light: #6B77E1;
+}
+
 /* Estilos personalizados para ReNomada */
 @layer base {
   html {
@@ -34,7 +41,7 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-blue-400 hover:bg-blue-500 text-white font-bold py-3 px-6 rounded-lg transition-colors;
+    @apply bg-primary hover:bg-primary-dark text-white font-bold py-3 px-6 rounded-lg transition-colors;
   }
   
   .btn-secondary {
@@ -42,7 +49,7 @@
   }
   
   .input-field {
-    @apply w-full px-4 py-3 rounded-lg border-2 border-white/20 bg-white/10 text-white placeholder-gray-300 focus:outline-none focus:border-blue-300 transition-colors;
+    @apply w-full px-4 py-3 rounded-lg border-2 border-white/20 bg-white/10 text-white placeholder-gray-300 focus:outline-none focus:border-primary transition-colors;
   }
 
   .section-padding {
@@ -50,7 +57,7 @@
   }
 
   .container-padding {
-    @apply px-6;
+    @apply px-6 lg:px-8 xl:px-6;
   }
 
   .heading-xl {

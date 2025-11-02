@@ -1,0 +1,25 @@
+{
+	"name": "ReNomada - Libera espacio. Reduce tu huella.",
+	"short_name": "ReNomada",
+	"description": "Regala lo que te sobra, encuentra lo que te falta y conecta con otros viajeros a tu alrededor.",
+	"icons": [
+		{
+			"src": "/android-chrome-192x192.png",
+			"sizes": "192x192",
+			"type": "image/png",
+			"purpose": "any maskable"
+		},
+		{
+			"src": "/android-chrome-512x512.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "any maskable"
+		}
+	],
+	"theme_color": "#1e293b",
+	"background_color": "#0f172a",
+	"display": "standalone",
+	"orientation": "portrait-primary",
+	"start_url": "/",
+	"scope": "/"
+}
