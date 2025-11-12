@@ -483,11 +483,11 @@ import Logo from './Logo.astro';
   });
 </script>
 
-<!-- Google Analytics 4 -->
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0GLRK3PH8L"></script>
 <script>
-  (window as any).dataLayer = (window as any).dataLayer || [];
-  function gtag(...args: any[]){((window as any).dataLayer as any[]).push(args);}
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'G-0GLRK3PH8L');
